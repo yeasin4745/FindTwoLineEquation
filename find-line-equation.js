@@ -63,3 +63,188 @@ function equation(point = [], m) {
 
     
 })();
+
+
+
+
+// circle related 
+function circleFromDiameter(point1, point2) {
+ const [x1, y1, x2, y2] = [...point1, ...point2];
+ 
+ // console.log([x1,y1,x2,y2])
+ // formula 
+ // x^+y^2 -(x1+x2)x-(y1+y2)y+(x1x2+y1y2)=0
+ /*
+ let A = x1 + x2;
+ let B = y1 + y2;
+ let x = x1 * x2,
+  y = y1 * y2;
+ let C = x + y;
+ 
+ // make equation 
+ equation += ` ${A<0 ? ' + ':' - '}${Math.abs(A)}x ${B< 0 ? ' + ' : ' - '}${Math.abs(B)}y ${C< 0? ' - ' : ' + '}${Math.abs(C)}=0`
+ */
+ 
+
+let D = -(x1 + x2);
+let E = -(y1 + y2);
+let F = x1 * x2 + y1 * y2;
+
+
+let equation = 'x^2 + y^2';
+
+// Handle D term
+if (D !== 0) {
+ equation += D < 0 ? ' - ' : ' + ';
+ if (Math.abs(D) !== 1) {
+  equation += Math.abs(D);
+ }
+ equation += 'x';
+}
+
+// Handle E term
+if (E !== 0) {
+ equation += E < 0 ? ' - ' : ' + ';
+ if (Math.abs(E) !== 1) {
+  equation += Math.abs(E);
+ }
+ equation += 'y';
+}
+
+// Handle F term
+if (F !== 0) {
+ equation += F < 0 ? ' - ' : ' + ';
+ equation += Math.abs(F);
+}
+
+equation += ' = 0';
+
+
+return equation;
+ 
+}
+
+
+//console.log(circleFromDiameter([1, 2], [3, 4]))
+//console.log(circleFromDiameter([0, 5], [3, 0]))
+//console.log(circleFromDiameter([0, 0], [2, 0]))
+
+
+
+
+
+function radiusAndCenterPoint(r, center = []) {
+ 
+ let [h, k] = center;
+ let equation = 'x^2 + y^2';
+ let C = h ** 2 + k ** 2 - r ** 2;
+ let A = 2 * h;
+ let B = 2 * k;
+ 
+ equation += `${A>= 0 ? ' - ' : '+'}${Math.abs(A)}x ${B>= 0 ? '-' : '+'}${Math.abs(B)}y ${C>= 0 ? '+':'-'}${Math.abs(C)}=0`;
+ 
+ return equation;
+ 
+ 
+}
+
+//console.log(radiusAndCenterPoint(5, [5, -3]))
+
+//console.log(radiusAndCenterPoint(0, [ -3,0]))
+
+// circle related 
+function circleFromDiameter(point1, point2) {
+ const [x1, y1, x2, y2] = [...point1, ...point2];
+ 
+ // console.log([x1,y1,x2,y2])
+ // formula 
+ // x^+y^2 -(x1+x2)x-(y1+y2)y+(x1x2+y1y2)=0
+ /*
+ let A = x1 + x2;
+ let B = y1 + y2;
+ let x = x1 * x2,
+  y = y1 * y2;
+ let C = x + y;
+ 
+ // make equation 
+ equation += ` ${A<0 ? ' + ':' - '}${Math.abs(A)}x ${B< 0 ? ' + ' : ' - '}${Math.abs(B)}y ${C< 0? ' - ' : ' + '}${Math.abs(C)}=0`
+ */
+ 
+
+let D = -(x1 + x2);
+let E = -(y1 + y2);
+let F = x1 * x2 + y1 * y2;
+
+
+let equation = 'x^2 + y^2';
+
+// Handle D term
+if (D !== 0) {
+ equation += D < 0 ? ' - ' : ' + ';
+ if (Math.abs(D) !== 1) {
+  equation += Math.abs(D);
+ }
+ equation += 'x';
+}
+
+// Handle E term
+if (E !== 0) {
+ equation += E < 0 ? ' - ' : ' + ';
+ if (Math.abs(E) !== 1) {
+  equation += Math.abs(E);
+ }
+ equation += 'y';
+}
+
+// Handle F term
+if (F !== 0) {
+ equation += F < 0 ? ' - ' : ' + ';
+ equation += Math.abs(F);
+}
+
+equation += ' = 0';
+
+
+return equation;
+ 
+}
+
+
+//console.log(circleFromDiameter([1, 2], [3, 4]))
+//console.log(circleFromDiameter([0, 5], [3, 0]))
+//console.log(circleFromDiameter([0, 0], [2, 0]))
+
+
+
+
+
+function radiusAndCenterPoint(r, center = []) {
+ 
+ let [h, k] = center;
+ let equation = 'x^2 + y^2';
+ let C = h ** 2 + k ** 2 - r ** 2;
+ let A = 2 * h;
+ let B = 2 * k;
+ 
+ equation += `${A>= 0 ? ' - ' : '+'}${Math.abs(A)}x ${B>= 0 ? '-' : '+'}${Math.abs(B)}y ${C>= 0 ? '+':'-'}${Math.abs(C)}=0`;
+ 
+ return equation;
+ 
+ 
+}
+
+//console.log(radiusAndCenterPoint(5, [5, -3]))
+
+//console.log(radiusAndCenterPoint(0, [ -3,0]))
+
+    
+
+
+
+
+
+
+
+
+
+
